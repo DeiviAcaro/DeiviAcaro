@@ -1,0 +1,362 @@
+/* Variables de Colores */
+:root {
+    --primary-color: #FF2E63; /* Rosa vibrante */
+    --secondary-color: #00ADB5; /* Turquesa/Azul verdoso */
+    --accent-color: #FFD700; /* Dorado brillante */
+    --text-dark: #333;
+    --text-light: #fff;
+    --background-dark: #222831;
+    --background-light: #EEEEEE;
+    --hover-effect: 0.3s ease;
+}
+
+/* Reset Básico y Tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color var(--hover-effect);
+}
+
+.btn:hover {
+    background-color: #E01E53; /* Un tono más oscuro del primary-color */
+}
+
+/* Header - Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    overflow: hidden;
+    /* CAMBIO AQUÍ: Se ha actualizado la imagen de fondo */
+    background: url('../image/fondo.jpeg') no-repeat center center/cover;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Secciones Generales */
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+#about, #nutrition-plan {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+.bg-dark {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.bg-dark h2 {
+    color: var(--accent-color);
+}
+
+/* Misión y Visión */
+.mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.mission-vision .card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    text-align: left;
+    transition: transform var(--hover-effect), box-shadow var(--hover-effect);
+}
+
+.mission-vision .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mission-vision .card h3 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background-color: #393E46; /* Un tono más claro que background-dark */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform var(--hover-effect), box-shadow var(--hover-effect);
+    color: var(--text-light);
+}
+
+.service-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease; /* Transición para el zoom en hover */
+}
+
+.service-item:hover img {
+    transform: scale(1.1); /* Efecto zoom en la imagen */
+}
+
+.service-item h3 {
+    color: var(--accent-color);
+    margin-top: 20px;
+    font-size: 1.6em;
+}
+
+.service-item p {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Plan de Alimentación */
+.nutrition-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.nutrition-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.nutrition-image:hover img {
+    transform: scale(1.05); /* Ligero zoom en la imagen del plan */
+}
+
+.nutrition-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.nutrition-text ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.nutrition-text ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 3px solid var(--primary-color);
+}
+
+.footer p {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366; /* Color de WhatsApp */
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px; /* Botón más redondo */
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color var(--hover-effect), transform var(--hover-effect);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851; /* Un tono más oscuro */
+    transform: translateY(-3px) scale(1.05); /* Pequeño levantamiento y zoom */
+}
+
+.whatsapp-btn img { /* Estilo para el icono dentro del botón */
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    filter: invert(1); /* Para que el icono sea blanco si es necesario */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section h2 {
+        font-size: 2.2em;
+    }
+
+    .mission-vision .card {
+        max-width: 100%;
+    }
+
+    .nutrition-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nutrition-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+}
